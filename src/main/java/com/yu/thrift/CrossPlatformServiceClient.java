@@ -18,9 +18,9 @@ public class CrossPlatformServiceClient {
 
 
 	public static void main(String[] args) {
-		TTransport transport = new TSocket("localhost", 9090);
+		TTransport transport = new TSocket("localhost", 9000);
 		try {
-			TProtocol protocol = new TCompactProtocol(transport);
+			TProtocol protocol = new TBinaryProtocol(transport);
 			CrossPlatformService.Client client = new CrossPlatformService.Client(protocol);
 			transport.open();
 			CrossPlatformResource resource = new CrossPlatformResource();
